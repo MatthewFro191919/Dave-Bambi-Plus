@@ -2759,7 +2759,7 @@ class Character extends FlxSprite
 	
 				barColor = FlxColor.fromRGB(128, 240, 203);
 
-				globalOffset = [40, 400];
+				globalOffset = [80, 300];
 				playAnim('idle');
 				antialiasing = false;
 				nativelyPlayable = true;
