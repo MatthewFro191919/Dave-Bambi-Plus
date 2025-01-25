@@ -1,4 +1,4 @@
-﻿package openfl.media;
+package openfl.media;
 
 #if !flash
 import haxe.Int64;
