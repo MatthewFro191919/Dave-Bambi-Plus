@@ -1,1 +1,1 @@
-splitathon 2 testing in progress
+Put your custom character image and .xml/.txt files here!
