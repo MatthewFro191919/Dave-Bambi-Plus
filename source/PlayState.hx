@@ -494,8 +494,9 @@ class PlayState extends MusicBeatState
 	public static var xoVoice:Bool = false;
 	public static var shinxVoice:Bool = false;
 	public static var corruptzieVoice:Bool = false;
+	public static var legooeyVoice:Bool = false;
 	var isShaggy:Bool = false;
-    var isKogre:Bool = false;
+        var isKogre:Bool = false;
 	var isTails:Bool = false;	
 	var isConner:Bool = false;
 	var isChipFlake:Bool = false;
@@ -505,6 +506,7 @@ class PlayState extends MusicBeatState
 	var isXo:Bool = false;
 	var isShinx:Bool = false;
 	var isCorruptzie:Bool = false;
+	var isLeGooey:Bool = false;
 	var legs:FlxSprite;
 	var shaggyT:FlxTrail;
 	var legT:FlxTrail;
@@ -1147,8 +1149,9 @@ class PlayState extends MusicBeatState
                 isStickyBM = boyfriend.curCharacter == 'sticky';
                 isEevee = boyfriend.curCharacter == 'eevee' || boyfriend.curCharacter == 'eevee-shiny';
                 isXo = boyfriend.curCharacter == 'xo';
-	        	isShinx = boyfriend.curCharacter == 'shinx';
-	        	isCorruptzie = boyfriend.curCharacter == 'corruptzie';
+	        isShinx = boyfriend.curCharacter == 'shinx';
+	        isCorruptzie = boyfriend.curCharacter == 'corruptzie';
+	        isLeGooey = boyfriend.curCharacter == 'gooey';
 
 		switch (stageCheck)
 		{
@@ -1322,6 +1325,9 @@ class PlayState extends MusicBeatState
 		corruptzieVoice = isCorruptzie && ['interdimensional'].contains(SONG.song.toLowerCase());
 
 		shinxVoice = isShinx && ['interdimensional'].contains(SONG.song.toLowerCase());
+
+		legooeyVoice = isLeGooey && ['interdimensional'].contains(SONG.song.toLowerCase());
+
 		generateSong(SONG.song);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -3558,6 +3564,9 @@ class PlayState extends MusicBeatState
 
 		if (isCorruptzie && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : corruptzieVoice ? "Corruptzie" : ""));
+
+		if (isLeGooey && SONG.needsVoices)
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : legooeyVoice ? "LeGooey" : ""));
 
 		FlxG.sound.list.add(vocals);
 
