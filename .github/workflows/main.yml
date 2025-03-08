@@ -52,8 +52,11 @@ jobs:
       - name: Compile (Windows)
         if: startsWith(matrix.os, 'windows')
         run: haxelib run lime build windows -D officialBuild
-      - name: Upload artifact
+
+      - name: Upload Artifact (Windows)
+        if: startsWith(matrix.os, 'windows')
         uses: actions/upload-artifact@main
         with:
-           path: export\release\windows\bin\*
-           if-no-files-found: warn
+          name: windowsBuild
+          path: export\release\windows\bin\*
+          if-no-files-found: error
