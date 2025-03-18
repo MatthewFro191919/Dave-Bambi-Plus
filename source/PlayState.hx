@@ -8888,6 +8888,7 @@ class PlayState extends MusicBeatState
 								{
 									switchBF(pre3dSkin, boyfriend.getPosition());
 									switchGF(boyfriend.skins.get('gfSkin'), gf.getPosition());
+									switchGF(boyfriend.skins.get('gfSkinSpeakers'), gf.getPosition());
 								}
 							}
 					}
