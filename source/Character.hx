@@ -48,7 +48,7 @@ class Character extends FlxSprite
 		skins.set('normal', curCharacter);
 		skins.set('recursed', 'bf-recursed');
 		skins.set('gfSkin', 'gf-none');
-		skins.set('gfSkinspeakers', 'gf-none');
+		skins.set('gfSkinSpeakers', 'gf-none');
 		
 		antialiasing = FlxG.save.data.globalAntialiasing;
 
