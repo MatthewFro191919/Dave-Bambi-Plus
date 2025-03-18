@@ -73,4 +73,4 @@ jobs:
         buildArgs: ${{ matrix.buildArgs }}
         setupCommand: ${{ matrix.setupCommand }}
         artifactName: ${{ matrix.artifactName }}
-        artifactPath: ${{ matrix.artifactPath }
+        artifactPath: ${{ matrix.artifactPath }}
