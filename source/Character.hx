@@ -48,6 +48,7 @@ class Character extends FlxSprite
 		skins.set('normal', curCharacter);
 		skins.set('recursed', 'bf-recursed');
 		skins.set('gfSkin', 'gf-none');
+		skins.set('gfSkinspeakers', 'gf-none');
 		
 		antialiasing = FlxG.save.data.globalAntialiasing;
 
@@ -2764,7 +2765,33 @@ class Character extends FlxSprite
 				antialiasing = false;
 				nativelyPlayable = true;
 				flipX = false;
+	                	skins.set('gfSkin', 'mochigf');
+		                skins.set('gfSkinspeakers', 'mochigfspeakers');
 
+			case 'mochigf':
+				frames = Paths.getSparrowAtlas('characters/MochiNod', 'shared');
+
+				animation.addByPrefix('cheer', 'Cheer', 24, false);
+				animation.addByPrefix('sad', 'Sigh', 24, false);
+				animation.addByPrefix('danceLeft', 'NodLeft', 24, false);
+				animation.addByPrefix('danceRight', 'NodRight', 24, false);
+				animation.addByPrefix('scared', 'Spooked', 24);
+
+				loadOffsetFile(curCharacter);
+
+				barColor = FlxColor.fromString('#cfcdcf');
+
+				playAnim('danceRight');
+			case 'mochigfspeakers':
+				frames = Paths.getSparrowAtlas('characters/speaker_assets', 'shared');
+
+				animation.addByPrefix('idle', 'bumpBox', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				barColor = FlxColor.fromString('#cfcdcf');
+
+				playAnim('idle');
 		}
 		dance();
 
