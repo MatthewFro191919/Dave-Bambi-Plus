@@ -1159,6 +1159,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 500;
 				dad.y -= 100;
 				if (isShaggy) boyfriend.y += 150;
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 				if (boyfriend.curCharacter == 'godshaggy') boyfriend.x += 300;
 			case 'roof':
 				dad.setPosition(-3, 467);
@@ -1171,14 +1172,14 @@ class PlayState extends MusicBeatState
 			case 'farm' | 'farm-night'| 'farm-sunset':
 				dad.x += 200;
 				if (isShaggy) boyfriend.x += 150;
-				if (isChipFlake) boyfriend.setPosition(770, 150);
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 			case 'house' | 'house-night' | 'house-sunset':
 				dad.setPosition(50, 270);
 				if (dadmirror != null)
 				{
 					dadmirror.setPosition(dad.x - 50, dad.y);
 				}
-				if (isChipFlake) boyfriend.setPosition(770, 150);
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 				boyfriend.setPosition(843, 270);
 				gf.setPosition(300, -60);
 			case 'backyard':
@@ -1216,6 +1217,7 @@ class PlayState extends MusicBeatState
 				gf.setPosition(756, 206);
 			case 'freeplay':
 				if (isShaggy) boyfriend.y += 200;
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 				if (boyfriend.curCharacter == 'godshaggy') boyfriend.x += 300;
 			case 'red-void':
 				if (funnyFloatyBoys.contains(dad.curCharacter))
@@ -1223,6 +1225,7 @@ class PlayState extends MusicBeatState
 					dad.y -= 70;
 				}
 				if (isShaggy) boyfriend.y += 50;
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 			case 'interdimension-void':
 				if (isShaggy) boyfriend.y += 100;
 				if (isKogre) boyfriend.setPosition(770, 150);
@@ -1233,16 +1236,19 @@ class PlayState extends MusicBeatState
 				if (isEevee) boyfriend.setPosition(770, 150);
 				if (isXo) boyfriend.setPosition(770, 150);
 				if (isShinx) boyfriend.setPosition(770, 150);
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 			case 'green-void':
 				if (isShaggy) {
 					boyfriend.x += 150;
 					boyfriend.y += 50;
 				}
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 			case 'glitchy-void':
 				if (isShaggy) {
 					boyfriend.x += 150;
 					boyfriend.y += 150;
 				}
+				if (isLeGooey) boyfriend.setPosition(770, 150);
 			case 'banana-hell':
 				boyfriend.x += 770;
 				boyfriend.y += 100;
@@ -1326,7 +1332,7 @@ class PlayState extends MusicBeatState
 
 		shinxVoice = isShinx && ['interdimensional'].contains(SONG.song.toLowerCase());
 
-		legooeyVoice = isLeGooey && ['interdimensional'].contains(SONG.song.toLowerCase());
+		legooeyVoice = isLeGooey && ['warmup', 'house', 'insanity', 'polygonized', 'blocked', 'corn-theft', 'maze', 'splitathon', 'shredder', 'greetings', 'interdimensional', 'rano', 'bonus-song', 'bot-trot', 'escape-from-california', 'adventure', 'mealie', 'indignancy', 'memory', 'roofs', 'supernovae', 'glitch', 'master', 'cheating', 'unfairness', 'kabunga', 'recursed', 'exploitation'].contains(SONG.song.toLowerCase());
 
 		generateSong(SONG.song);
 
